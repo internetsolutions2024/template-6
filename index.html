@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="favicon.ico">
+   <title>Example-6</title>
+</head>
+
+<body>
+   <style>
+      /*https://htmlcodex.com/demo/?item=2500*/
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+      body {
+         background-color: #ececec;
+      }
+
+      :root {
+         --mycolor1: #FDA12B;
+         --mycolor2: #8D9297;
+         --mycolor3: #F8F9FA;
+         --mycolor4: #ffae45;
+      }
+
+      .main {
+         box-sizing: border-box;
+         max-width: 900px;
+         margin: 0 auto;
+         background-color: #fff;
+         font-family: 'Roboto', sans-serif;
+         cursor: pointer;
+         color: var(--mycolor2);
+      }
+
+      a {
+         text-decoration: none;
+      }
+
+      * h2,
+      p,
+      h3,
+      h4 {
+         margin: 0 0 10px 0 !important;
+         font-family: 'Poppins', sans-serif !important;
+      }
+
+      h2 {
+         font-size: 24px !important;
+         font-weight: 600 !important;
+      }
+
+      h3,
+      h4 {
+         font-size: 16px !important;
+         font-weight: normal !important;
+
+      }
+
+      p {
+         font-size: 14px;
+         line-height: 18px;
+         margin: 10px 0 !important;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {}
+
+      ul {
+         padding: 0 !important;
+      }
+
+      ul li {
+         list-style-type: none !important;
+         padding-left: 20px !important;
+         font-size: 14px !important;
+         line-height: 22px !important;
+         padding: 0 !important;
+      }
+
+      ._container {
+         max-width: 900px;
+         margin: 0 auto;
+      }
+
+      /*----------introduction----------*/
+
+
+      .introduction {
+         background: transparent url(img-6/carousel-1.jpg);
+         background-size: cover;
+         background-position: center;
+         color: var(--mycolor3);
+      }
+
+      .introduction__container {
+         background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      ._container {}
+
+      .introduction__body {
+         padding: 80px 60px;
+         max-width: 80%;
+      }
+
+      .introduction__sub-title {
+         font-size: 18px !important;
+         font-weight: 600 !important;
+         text-transform: uppercase;
+
+      }
+
+      .introduction__title {
+         font-size: 46px;
+         font-weight: 600 !important;
+         line-height: 50px;
+      }
+
+      .introduction__list {
+         display: flex;
+      }
+
+      .introduction__list li {
+         padding: 0 !important;
+         margin: 0 24px 0 0 !important;
+         font-size: 16px !important;
+         position: relative;
+      }
+
+      .introduction__list li::after {
+         position: absolute;
+         content: '';
+         top: 2px;
+         left: -20px;
+         width: 16px;
+         height: 16px;
+         background-color: var(--mycolor1);
+         border-radius: 50%;
+      }
+
+      .introduction__list_li-none::after {
+         content: none !important;
+
+      }
+
+      .introduction__button {}
+
+      .button {
+         display: inline-block;
+         padding: 15px 30px;
+         color: var(--mycolor3);
+         background-color: var(--mycolor1);
+         font-size: 14px;
+         transition: 0.3s;
+      }
+
+      .button:hover {
+         background-color: var(--mycolor4);
+         transition: 0.3s;
+      }
+
+      @media screen and (max-width: 500px) {
+         .introduction__body {
+            padding: 80px 30px;
+         }
+
+         .introduction__title {
+            font-size: 30px !important;
+            line-height: 34px !important;
+         }
+      }
+
+      /*-----------about---------*/
+
+      .about {
+         padding: 60px 20px 30px;
+      }
+
+      .about__container {}
+
+      ._container {}
+
+      .about__body {
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         align-items: center;
+      }
+
+      .image-about {}
+
+      .image-about img {}
+
+      .image-about__label {}
+
+      /*---------BEM-----------*/
+
+      .image-main {
+         flex: 1 1 30%;
+         margin: 10px 10px 10px 40px;
+         position: relative;
+      }
+
+      .image-main img {
+         width: 100%;
+         max-height: 400px;
+         object-fit: cover;
+      }
+
+      .image-main__label {
+         background-color: #fff;
+         padding: 5px;
+         position: absolute;
+         top: -45px;
+         left: -45px;
+         text-align: center;
+      }
+
+      .image-main__label-body {
+         color: var(--mycolor3);
+         background-color: var(--mycolor1);
+         padding: 10px;
+         font-weight: 600 !important;
+         margin: 10px;
+         transition: .3s;
+      }
+
+      .image-main__number {
+         font-size: 22px !important;
+      }
+
+      .image-main__years {
+         font-size: 20px !important;
+      }
+
+      .image-main__experience {
+         font-size: 18px !important;
+      }
+
+      /*---------BEM-----------*/
+
+      .about__content {
+         flex: 1 1 45%;
+         margin: 10px;
+      }
+
+      .main-title {
+         border-left: 3px solid var(--mycolor1);
+         padding: 0 0 0 10px;
+      }
+
+      .about__content p {
+         margin: 15px 0 !important;
+      }
+
+      .about__title {}
+
+      .main-title h2 {
+         font-size: 14px !important;
+         text-transform: uppercase;
+         font-weight: 600 !important;
+         margin: 0 0 5px !important;
+      }
+
+      .main-title h3 {
+         font-weight: 700 !important;
+         color: #000;
+         font-size: 28px !important;
+         line-height: 32px !important;
+         margin: 0 0 5px !important;
+      }
+
+      .about__list {
+         display: flex;
+         flex-wrap: wrap;
+         border-top: 1px solid #ececec;
+         padding: 5px 0 !important;
+         box-sizing: border-box;
+         color: #000 !important;
+         font-weight: 500 !important;
+         margin: 15px 0 0 !important;
+      }
+
+      .about__list li {
+         font-size: 16px !important;
+         line-height: 18px !important;
+         position: relative;
+         margin: 10px 0 !important;
+         padding: 0 0 0 35px !important;
+         flex: 1 1 25%;
+      }
+
+      .about__list li::after {
+         position: absolute;
+         content: '';
+         top: 0;
+         left: 5px;
+         width: 24px;
+         height: 24px;
+         background: transparent url(img-6/check.png);
+         background-size: 24px 24px;
+         border-radius: 50%;
+      }
+
+      @media screen and (max-width: 500px) {
+         .about__content {
+            flex: 1 1 100%;
+         }
+      }
+
+      /*--------------products---------*/
+
+      .products {}
+
+      .products__body {
+         display: flex;
+         flex-wrap: wrap;
+      }
+
+      .products__item {
+         flex: 1 1 20%;
+         display: flex;
+         flex-direction: column;
+         background: transparent url(img-6/fact-1.jpg);
+         background-size: cover;
+         color: #fff !important;
+         position: relative;
+      }
+
+      .products__item::after {
+         position: absolute;
+         content: '';
+         background: rgba(0, 0, 0, 0.6);
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         transition: 0.3s;
+      }
+
+      .products__item:hover::after {
+         background: rgba(0, 0, 0, 0.5);
+         transition: 0.3s;
+      }
+
+      .products__item:nth-child(2) {
+         background: transparent url(img-6/fact-2.jpg);
+         background-size: cover;
+      }
+
+      .products__item:nth-child(3) {
+         background: transparent url(img-6/fact-3.jpg);
+         background-size: cover;
+      }
+
+      .products__item:nth-child(4) {
+         background: transparent url(img-6/fact-4.jpg);
+         background-size: cover;
+      }
+
+      .products__content {
+         padding: 60px 20px;
+         z-index: 2;
+      }
+
+      .products__content h3 {
+         font-weight: 600 !important;
+      }
+
+      .products__number {
+         -webkit-text-stroke: 2px var(--mycolor1);
+         color: transparent;
+         font-size: 75px;
+         line-height: 85px;
+         font-weight: 700;
+         font-family: 'Poppins', sans-serif !important;
+      }
+
+      .products__button {}
+
+      .button-2 {
+         color: #fff !important;
+         text-transform: uppercase;
+         font-size: 13px !important;
+         display: block;
+      }
+
+      .products__button:hover {
+         color: var(--mycolor1) !important;
+      }
+
+      @media screen and (max-width: 800px) {
+         .products__item {
+            flex: 1 1 40%;
+         }
+      }
+
+      @media screen and (max-width: 500px) {
+         .products__item {
+            flex: 1 1 100%;
+         }
+      }
+
+      /*----------feature--------*/
+
+      .feature {
+         padding: 30px 20px 30px;
+      }
+
+      .feature__container {}
+
+      .feature__body {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         align-items: center;
+      }
+
+      .feature__content {
+         flex: 1 1 45%;
+         margin: 10px;
+      }
+
+      .feature__title {}
+
+      .feature__list {
+         display: flex;
+         flex-wrap: wrap;
+         box-sizing: border-box;
+         color: #000 !important;
+         font-weight: 500 !important;
+         gap: 10px;
+      }
+
+      .feature__item {
+         font-size: 16px !important;
+         line-height: 18px !important;
+         position: relative;
+
+         flex: 1 1 40%;
+      }
+
+      .feature__item p {
+         padding: 0 0 0 35px !important;
+      }
+
+      .feature__list span {
+         font-size: 14px;
+         color: var(--mycolor2);
+         padding: 0 !important;
+         font-weight: 400 !important;
+      }
+
+      .feature__list p::after {
+         position: absolute;
+         content: '';
+         top: 10px;
+         left: 5px;
+         width: 24px;
+         height: 24px;
+         background: transparent url(img-6/check.png);
+         background-size: 24px 24px;
+         border-radius: 50%;
+      }
+
+      .feature__list {}
+
+      .feature__image {}
+
+      .image-feature {
+         margin-top: 40px !important;
+      }
+
+      .image-feature__label {}
+
+      .image-feature__label-body {}
+
+      @media screen and (max-width: 500px) {
+         .feature__content {
+            flex: 1 1 100%;
+         }
+      }
+
+      /*---------services--------*/
+
+      .services {
+         padding: 30px 20px;
+      }
+
+      .services__container {}
+
+      ._container {}
+
+      .services__start {
+         padding: 0 10px;
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+      }
+
+      .services__title {
+         flex: 1 1 60%;
+      }
+
+
+      .services__button-start {
+         display: inline-block !important;
+         margin: 20px 0 0 !important;
+      }
+
+      .services__body {
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         padding: 20px 0 0;
+      }
+
+      .services__item {
+         margin: 10px;
+         flex: 1 1 25%;
+         background-color: var(--mycolor3);
+         position: relative;
+         z-index: 0;
+         transition: .3s;
+      }
+
+      .services__item::after {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 0%;
+         background-color: var(--mycolor1);
+         z-index: -1;
+         transition: .2s;
+      }
+
+      .services__item:hover:after {
+         height: 100%;
+         transition: .2s;
+      }
+
+      .services__image {
+         z-index: 1;
+      }
+
+      .services__image img {
+         width: 100%;
+      }
+
+      .services__text {
+         text-align: center;
+         padding: 10px;
+         z-index: 1;
+      }
+
+      .services__item h3 {
+         color: #000;
+         transition: .4s;
+         font-weight: 600 !important;
+      }
+
+      .services__item:hover h3 {
+         color: #fff;
+         transition: .4s;
+      }
+
+      .services__item:hover {
+         color: #fff;
+         transition: .4s;
+      }
+
+      .services__button {
+         color: var(--mycolor1) !important;
+         margin: 0 0 10px !important;
+         transition: .4s;
+      }
+
+      .services__item:hover .services__button {
+         color: #fff !important;
+         transition: .4s;
+      }
+
+      @media screen and (max-width: 800px) {
+         .services__item {
+            flex: 1 1 40%;
+         }
+      }
+
+      @media screen and (max-width: 500px) {
+         .services__item {
+            flex: 1 1 100%;
+         }
+      }
+
+      /*---------testimonial----------*/
+
+      .testimonial {
+         padding: 20px 20px 30px;
+      }
+
+      .testimonial__container {}
+
+      ._container {}
+
+      .testimonial__body {
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+      }
+
+      .testimonial__content {
+         margin: 10px;
+         flex: 1 1 35%;
+      }
+
+      .testimonial__title {
+         margin-bottom: 20px;
+      }
+
+      .main-title {}
+
+      .testimonial__numbers {
+         display: flex;
+         flex-wrap: wrap;
+      }
+
+      .testimonial__number {
+         display: flex;
+         flex-wrap: wrap;
+         flex-direction: column;
+         font-size: 30px;
+         font-weight: 600 !important;
+         color: #000;
+
+         flex: 1 1 40%;
+         margin-top: 10px;
+      }
+
+      .testimonial__number img {
+         width: 32px;
+         height: 32px;
+      }
+
+      .testimonial__number p {
+         font-size: 18px !important;
+      }
+
+      .testimonial__numeric {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+      }
+
+      .testimonial__review {
+         flex: 1 1 45%;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+      }
+
+      .review-item {
+         display: flex;
+         flex-wrap: wrap;
+         margin: 10px;
+      }
+
+      .review-item__image {
+         display: flex;
+         align-items: flex-end;
+         flex-wrap: wrap;
+      }
+
+      .review-item__image img {
+         width: 64px;
+         height: 64px;
+      }
+
+      .review-item__info {
+         margin: 0 10px 10px;
+         position: relative;
+      }
+
+      .review-item__info::after {
+         position: absolute;
+         content: '';
+         width: 50%;
+         height: 100%;
+         border-bottom: 3px solid var(--mycolor1);
+         top: 5px;
+         left: 0;
+      }
+
+      .review-item__name {
+         margin: 5px 0 0 !important;
+         color: #000;
+         font-weight: 600 !important;
+      }
+
+      .review-item__profession {
+         margin: 5px 0 0 !important;
+      }
+
+      @media screen and (max-width: 500px) {
+         .testimonial__content {
+            flex: 1 1 100%;
+         }
+      }
+   </style>
+   <div class="main">
+      <section class="introduction">
+         <div class="introduction__container _container">
+            <div class="introduction__body">
+               <p class="introduction__sub-title">Welcome to Apex</p>
+               <p class="introduction__title">A Construction & Renovation Company</p>
+               <ul class="introduction__list">
+                  <li class="introduction__list_li-none">Commercial</li>
+                  <li>Residential</li>
+                  <li>Industrial</li>
+               </ul>
+               <div class="introduction__button button">More Details</div>
+            </div>
+         </div>
+      </section>
+      <section class="about">
+         <div class="about__container _container">
+            <div class="about__body">
+               <div class="about__image image-about image-main">
+                  <img src="img-6/about.jpg" alt="">
+                  <div class="image-about__label image-main__label">
+                     <div class="image-about__label-body image-main__label-body">
+                        <p class="image-main__number">25</p>
+                        <p class="image-main__years">Years</p>
+                        <p class="image-main__experience">Experience</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="about__content">
+                  <div class="about__title main-title">
+                     <h2>Про нас</h2>
+                     <h3>Unique Solutions For Residentials & Industries!</h3>
+                  </div>
+                  <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita
+                     erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                  <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
+                     et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat
+                     amet</p>
+                  <ul class="about__list">
+                     <li>Ontime at services</li>
+                     <li>24/7 hours services</li>
+                     <li>Verified professionals</li>
+                  </ul>
+
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="products">
+         <div class="products__body">
+            <div class="products__item">
+               <div class="products__content">
+                  <div class="products__number">01</div>
+                  <h3>Construction</h3>
+                  <p>Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit clita duo justo erat amet</p>
+                  <a class="products__button button-2" href="">read more ➔</a>
+               </div>
+            </div>
+            <div class="products__item">
+               <div class="products__content">
+                  <div class="products__number">02</div>
+                  <h3>Mechanical</h3>
+                  <p>Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit clita duo justo erat amet </p>
+                  <a class="products__button button-2" href="">read more ➔</a>
+               </div>
+            </div>
+            <div class="products__item">
+               <div class="products__content">
+                  <div class="products__number">03</div>
+                  <h3>Architecture</h3>
+                  <p>Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit clita duo justo erat amet</p>
+                  <a class="products__button button-2" href="">read more ➔</a>
+               </div>
+            </div>
+            <div class="products__item">
+               <div class="products__content">
+                  <div class="products__number">04</div>
+                  <h3>Interior Design</h3>
+                  <p>Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit clita duo justo erat amet</p>
+                  <a class="products__button button-2" href="">read more ➔</a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="feature">
+         <div class="feature__container _container">
+            <div class="feature__body">
+               <div class="feature__content">
+                  <div class="feature__title main-title">
+                     <h2>Чому обирають нас?</h2>
+                     <h3>Unique Solutions For Residentials & Industries!</h3>
+                  </div>
+                  <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita
+                     erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+
+                  <div class="feature__list">
+                     <div class="feature__item">
+                        <p>Large number of services provided</p><span>Magna sea eos sit dolor, ipsum amet ipsum lorem
+                           diam</span>
+                     </div>
+                     <div class="feature__item">
+                        <p>25+ years of professional experience</p><span>Magna sea eos sit dolor, ipsum amet ipsum lorem
+                           diam</span>
+                     </div>
+                     <div class="feature__item">
+                        <p>A large number of grateful customers</p> <span>Magna sea eos sit dolor, ipsum amet ipsum
+                           lorem
+                           diam</span>
+                     </div>
+                     <div class="feature__item">
+                        <p>Always reliable and affordable prices</p><span>Magna sea eos sit dolor, ipsum amet ipsum
+                           lorem
+                           diam</span>
+                     </div>
+
+                  </div>
+
+               </div>
+               <div class="feature__image image-feature image-main">
+                  <img src="img-6/feature.jpg" alt="">
+                  <div class="image-feature__label image-main__label">
+                     <div class="image-feature__label-body image-main__label-body">
+                        <p class="image-main__number">25</p>
+                        <p class="image-main__years">Years</p>
+                        <p class="image-main__experience">Experience</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="services">
+         <div class="services__container _container">
+            <div class="services__start">
+               <div class="services__title main-title">
+                  <h2>Наші послуги</h2>
+                  <h3>Construction And Renovation Solutions</h3>
+               </div>
+               <a class="services__button-start button" href="">More services</a>
+            </div>
+            <div class="services__body">
+               <div class="services__item">
+                  <div class="services__image"><img src="img-6/service-1.jpg" alt=""></div>
+                  <div class="services__text">
+                     <h3>Building Construction</h3>
+                     <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                     <a class="services__button button-2" href="">read more ➔</a>
+                  </div>
+               </div>
+               <div class="services__item">
+                  <div class="services__image"><img src="img-6/service-2.jpg" alt=""></div>
+                  <div class="services__text">
+                     <h3>Home Maintainance</h3>
+                     <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                     <a class="services__button button-2" href="">read more ➔</a>
+                  </div>
+               </div>
+               <div class="services__item">
+                  <div class="services__image"><img src="img-6/service-3.jpg" alt=""></div>
+                  <div class="services__text">
+                     <h3>Renovation and Painting</h3>
+                     <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                     <a class="services__button button-2" href="">read more ➔</a>
+                  </div>
+               </div>
+               <div class="services__item">
+                  <div class="services__image"><img src="img-6/service-4.jpg" alt=""></div>
+                  <div class="services__text">
+                     <h3>Wiring and installation</h3>
+                     <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                     <a class="services__button button-2" href="">read more ➔</a>
+                  </div>
+               </div>
+               <div class="services__item">
+                  <div class="services__image"><img src="img-6/service-5.jpg" alt=""></div>
+                  <div class="services__text">
+                     <h3>Tiling and Painting</h3>
+                     <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                     <a class="services__button button-2" href="">read more ➔</a>
+                  </div>
+               </div>
+               <div class="services__item">
+                  <div class="services__image"><img src="img-6/service-6.jpg" alt=""></div>
+                  <div class="services__text">
+                     <h3>Interior Design</h3>
+                     <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                     <a class="services__button button-2" href="">read more ➔</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </section>
+      <section class="testimonial">
+         <div class="testimonial__container _container">
+            <div class="testimonial__body">
+               <div class="testimonial__content">
+                  <div class="testimonial__title main-title">
+                     <h2>Відгуки</h2>
+                     <h3>What Our Happy Clients Say!</h3>
+                  </div>
+                  <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
+                     lorem sit clita duo justo magna dolore erat amet</p>
+                  <div class="testimonial__numbers">
+                     <div class="testimonial__number">
+                        <div class="testimonial__numeric"><img src="img-6/group.png" alt="">
+                           123+
+                        </div>
+                        <p>Happy Clients</p>
+                     </div>
+                     <div class="testimonial__number">
+                        <div class="testimonial__numeric"><img src="img-6/check.png" alt="">
+                           123+
+                        </div>
+                        <p>Projects Done</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="testimonial__review review">
+                  <div class="review-item">
+                     <div class="review-item__image"><img src="img-6/testimonial-1.jpg" alt="">
+                        <div class="review-item__info">
+                           <p class="review-item__name">Client name</p>
+                           <p class="review-item__profession">Profession</p>
+                        </div>
+                     </div>
+
+                     <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem
+                        lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+
+                  </div>
+                  <div class="review-item">
+                     <div class="review-item__image"><img src="img-6/testimonial-2.jpg" alt="">
+                        <div class="review-item__info">
+                           <p class="review-item__name">Client name</p>
+                           <p class="review-item__profession">Profession</p>
+                        </div>
+
+                     </div>
+
+                     <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem
+                        lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+   </div>
+</body>
+
+</html>
